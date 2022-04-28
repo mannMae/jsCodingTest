@@ -206,15 +206,138 @@ if (input_17 >= 150) {
 //Q.18
 
 var input_18 = "20 30 40";
-
-var scores = input_18.split(" ");
+var scores_18 = input_18.split(" ");
 var sum_18 = 0;
-for (i of scores) {
-  sum_18 += parseInt(i);
+for (i of scores_18) {
+  sum_18 += parseInt(i, 10);
+}
+console.log(parseInt(sum_18 / scores_18.length));
+
+//=====================================================================
+
+//Q.19
+
+var input_19 = "2 5";
+var nums_19 = input_19.split(" ");
+console.log(parseInt(nums_19[0], 10) ** parseInt(nums_19[1], 10));
+
+//======================================================================
+
+//Q.20
+
+var input_20 = "10 2";
+var [a, b] = input_20.split(" ");
+a = parseInt(a);
+b = parseInt(b);
+console.log(parseInt(a / b, 10), a % b);
+
+//==========================================================================
+
+//Q.21
+
+// var set_1 = {1,2,3,5,6,7};
+// console.log(set_1)
+var set_2 = {};
+console.log(set_2); // 빈 Object
+var set_3 = new Set("javascript");
+console.log(set_3); // Set(9) {'j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't'}
+// var set_4 = new Set(range(5));
+// console.log(set_4);
+var set_5 = new Set();
+console.log(set_5); // Set(0) 빈 Set
+
+//============================================================================
+
+//Q.22
+
+// i/6 : 몫
+// i % 6 : 나머지 > 배수 확인 가능
+// i & 6 : 비트 and 연산
+// i | 6 : 비트 or 연산
+// i//6 : 주석처리됨
+
+//===========================================================================
+
+//Q.23
+
+console.log(10 / 3); //3.3333333333333335
+
+//===========================================================================
+
+//Q.24
+
+var input_24 = "jaeman";
+input_24 = input_24.toUpperCase();
+console.log(input_24);
+
+//=========================================================================
+
+//Q.25
+
+function circleWidth(r) {
+  return r * r * 3.14;
+}
+var input_25 = 5;
+console.log(circleWidth(input_25));
+
+//==========================================================================
+
+//Q.26
+
+var planets2 = {
+  수성: "Mercury",
+  금성: "Venus",
+  지구: "Earth",
+  화성: "Mars",
+  목성: "Jupiter",
+  토성: "Saturn",
+  천왕성: "Uranus",
+  해왕성: "Neptune",
+};
+var input_26 = "토성";
+console.log(planets2[input_26]);
+
+//============================================================================
+
+//Q.27
+
+var input_27_1 = "Yujin Hyewon";
+var input_27_2 = "70 100";
+var name_27 = input_27_1.split(" ");
+var nums_27 = input_27_2.split(" ");
+var obj_27 = {};
+for (i in name_27) {
+  obj_27[name_27[i]] = parseInt(nums_27[i]);
+}
+console.log(obj_27);
+
+//============================================================================
+
+//Q.28
+
+var input_28 = "JavaScript";
+for (let i = 0; i < input_28.length - 1; i++) {
+  console.log(input_28[i], input_28[i + 1]);
 }
 
-var average = parseInt(sum_18 / scores.length, 10);
+//=============================================================================
 
-console.log(average);
+//Q.29
 
-//10, 12, 18
+var input_29 = "q";
+if (input_29 === input_29.toUpperCase()) {
+  console.log("YES");
+} else {
+  console.log("NO");
+}
+
+//================================================================================
+
+//Q.30
+
+var input_30_1 = "pineapple is yummy";
+var input_30_2 = "apple";
+
+console.log(input_30_1.search(input_30_2));
+
+//12, 21, 23, 30

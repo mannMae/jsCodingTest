@@ -511,4 +511,103 @@ for (i of input_40_person) {
 console.log(sum_40);
 console.log(count_40);
 
-//12, 21, 23, 30, 36, 37, 38
+//========================================================
+
+//Q.41
+
+var input_41 = 19;
+var arr_41 = [];
+
+for (let i = 2; i <= input_41; i++) {
+  let count = 0;
+  for (let j = 0; j < arr_41.length; j++) {
+    if (i % arr_41[j] === 0) {
+      count += 1;
+      break;
+    } else {
+      continue;
+    }
+  }
+  if (count === 0) {
+    arr_41.push(i);
+  }
+}
+
+if (arr_41.includes(input_41)) {
+  console.log("YES");
+} else {
+  console.log("NO");
+}
+
+//=========================================================
+
+//Q.42
+
+var input_a_42 = 5;
+var input_b_42 = 26;
+
+const day_42 = new Date(`2020-${input_a_42}-${input_b_42}`);
+
+const days_42 = {
+  0: "SUN",
+  1: "MON",
+  2: "TUE",
+  3: "WED",
+  4: "THU",
+  5: "FRI",
+  6: "SAT",
+};
+console.log(days_42[day_42.getDay()]);
+
+//==================================================
+
+//Q.43
+
+var input_43 = 13;
+var arr_43 = [];
+
+while (input_43 >= 1) {
+  arr_43.unshift(input_43 % 2);
+  input_43 = parseInt(input_43 / 2);
+}
+
+console.log(arr_43.join(""));
+
+//=====================================================
+
+//Q.44
+
+var input_44 = 18234;
+
+var sum_44 = 0;
+
+for (i = 0; i < String(input_44).length; i++) {
+  sum_44 += parseInt(String(input_44)[i]);
+}
+
+console.log(sum_44);
+
+//======================================================
+
+//Q.45
+
+var day_45 = new Date();
+console.log(parseInt(day_45.getTime() / (1000 * 60 * 60 * 24 * 365)) + 1970);
+
+//===========================================================
+
+//Q.46
+var input_46_1 = 10;
+var input_46_2 = 15;
+var sum_46 = 0;
+for (let i = input_46_1; i <= input_46_2; i++) {
+  i = String(i);
+  console.log(i);
+  for (let j = 0; j <= i.length; j++) {
+    console.log(String(i)[j]);
+    sum_46 += parseInt(i[j]);
+  }
+}
+console.log(sum_46);
+
+//12, 21, 23, 30, 36, 37, 38, 41, 43

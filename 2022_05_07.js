@@ -350,12 +350,165 @@ console.log(input_30_1.search(input_30_2));
 //arr.pop()       O(1)
 //arr.includes(5) O(n)
 
-//12, 21, 23, 30
-
 //===============================================================
 
 //Q.32
 
 var input_32 = "안녕하세요, 저는 제주대학교 음악학부졸업생 김재만입니다.";
+var count_32 = input_32.split(" ").length;
 
-console.log();
+console.log(count_32);
+
+//==============================================================
+
+//Q.33
+var input_33_1 = "1 2 3 4 5";
+var input_33_2 = "2 4 6 7 8";
+
+var reverse_33_1 = input_33_1.split(" ").reverse().join(" ");
+var reverse_33_2 = input_33_2.split(" ").reverse().join(" ");
+
+console.log(reverse_33_1);
+console.log(reverse_33_2);
+
+//==============================================================
+
+//Q.34
+
+var input_34_1 = "176 156 155 165 166 169";
+var input_34_2 = "155 156 165 166 169 179";
+
+var sorted_34_1 = input_34_1
+  .split(" ")
+  .sort((a, b) => a - b)
+  .join(" ");
+var sorted_34_2 = input_34_2
+  .split(" ")
+  .sort((a, b) => a - b)
+  .join(" ");
+
+if (input_34_1 === sorted_34_1) {
+  console.log("YES");
+} else {
+  console.log("NO");
+}
+
+if (input_34_2 === sorted_34_2) {
+  console.log("YES");
+} else {
+  console.log("NO");
+}
+
+//==========================================================
+
+//Q.35
+
+function one(n) {
+  function two(m) {
+    return m ** n;
+  }
+  return two;
+}
+
+const a_35 = one(2);
+const b_35 = one(3);
+const c_35 = one(4);
+
+console.log(a_35(10));
+console.log(b_35(10));
+console.log(c_35(10));
+
+//===========================================================
+
+//Q.36
+
+var input_36 = 2;
+var result_36 = "";
+
+for (let i = 1; i <= 9; i++) {
+  result_36 += input_36 * i + " ";
+}
+
+console.log(result_36);
+
+//=========================================================
+
+//Q.37
+
+var input_37 = "원범 원범 혜원 혜원 혜원 혜원 유진 유진";
+var arr_37 = input_37.split(" ");
+var result_37 = {};
+
+for (i = 0; i < arr_37.length; i++) {
+  if (result_37[arr_37[i]]) {
+    result_37[arr_37[i]] += 1;
+  } else {
+    result_37[arr_37[i]] = 1;
+  }
+}
+
+var winner = Object.keys(result_37).reduce(function (a, b) {
+  return result_37[a] > result_37[b] ? a : b;
+});
+
+console.log(`${winner}(이)가 총 ${result_37[winner]}표로 반장이 되었습니다.`);
+
+//===========================================================
+
+//Q.38
+
+var input_38 = "97 86 75 66 55 97 85 97 97 95";
+var arr_38 = input_38.split(" ").sort((a, b) => b - a);
+var obj_38 = {};
+var count = 0;
+
+for (i = 0; i < arr_38.length; i++) {
+  if (obj_38[arr_38[i]]) {
+    obj_38[arr_38[i]] += 1;
+  } else {
+    count += 1;
+    if (count > 3) {
+      break;
+    }
+    obj_38[arr_38[i]] = 1;
+  }
+}
+
+var nums_38 = Object.values(obj_38);
+var sum_38 = 0;
+for (let j of nums_38) {
+  sum_38 += j;
+}
+console.log(sum_38);
+
+//========================================================
+
+//Q.39
+
+var input_39_1 = "querty";
+var input_39_2 = "hqllo my namq is hyqwon";
+
+console.log(input_39_1.split("q").join("e"));
+console.log(input_39_2.split("q").join("e"));
+
+//===========================================================
+
+//Q.40
+
+var input_40_weight = 50;
+var input_40_nums = 5;
+var input_40_person = [20, 20, 20, 20, 20];
+var sum_40 = 0;
+var count_40 = 0;
+
+for (i of input_40_person) {
+  if (sum_40 + i > input_40_weight) {
+    break;
+  }
+  sum_40 += i;
+  count_40 += 1;
+}
+console.log(sum_40);
+console.log(count_40);
+
+//12, 21, 23, 30, 36, 37, 38
